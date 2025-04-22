@@ -105,6 +105,29 @@ public class QuotidianiDAO {
             stmt.executeUpdate();
         }
     }
+
+    public void getQuotidianiVenduti(Quotidiani quotidiani) throws SQLException{
+        String sql = "SELECT nome,cvendute FROM quotidiani";
+        try (Connection conn = DriverManager.getConnection(url, user, password);
+            PreparedStatement stmt = conn.prepareStatement(sql)) {
+                stmt.setString(1, quotidiani.getNome());
+                stmt.setInt(2,  quotidiani.getCvendute());
+                stmt.executeUpdate();
+            }
+
+    }
+
+    
+    public void getQuotidianiRicevuti(Quotidiani quotidiani) throws SQLException{
+        String sql = "SELECT nome,cricevute FROM quotidiani";
+        try (Connection conn = DriverManager.getConnection(url, user, password);
+            PreparedStatement stmt = conn.prepareStatement(sql)) {
+                stmt.setString(1, quotidiani.getNome());
+                stmt.setInt(2,  quotidiani.getCricevute());
+                stmt.executeUpdate();
+            }
+
+    }
 }
 
 
