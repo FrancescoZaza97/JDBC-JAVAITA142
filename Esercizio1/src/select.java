@@ -24,12 +24,12 @@ public class select {
 			
 			// Stampiamone i risultati riga per riga
 			while (res.next()) {
-				System.out.println(res.getString("id_anagrafica"));
-				System.out.println(res.getString("ragione_sociale"));
-				System.out.println(res.getString("indirizzo"));
-				System.out.println(res.getString("cap"));
-				System.out.println(res.getString("localita"));
-				System.out.println(res.getString("provincia"));
+				System.out.println(res.getString("id"));
+				System.out.println(res.getString("nome"));
+				System.out.println(res.getString("prezzo"));
+				System.out.println(res.getString("agio"));
+				System.out.println(res.getString("cricevute"));
+				System.out.println(res.getString("cvendute"));
 			}					
 				
 			conn.close();
