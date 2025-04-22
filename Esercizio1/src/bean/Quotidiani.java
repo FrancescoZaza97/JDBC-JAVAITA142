@@ -69,5 +69,19 @@ public class Quotidiani {
     public void setCvendute(int cvendute) {
         this.cvendute = cvendute;
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+            " id='" + getId() + "'" +
+            ", nome='" + getNome() + "'" +
+            ", prezzo='" + getPrezzo() + "'" +
+            ", aggio='" + getAggio() + "'" +
+            ", cricevute='" + getCricevute() + "'" +
+            ", cvendute='" + getCvendute() + "'" +
+            "}";
+    }
+
+
 }
 
