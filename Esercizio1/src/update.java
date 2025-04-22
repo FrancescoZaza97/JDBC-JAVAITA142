@@ -5,7 +5,7 @@ import java.sql.*;
 public class update {
 
     // url che punta al database mysql
-    static final String url = "jdbc:mysql://localhost:3306/rubrica";
+    static final String url = "jdbc:mysql://localhost:3306/edicola";
 
     public static void main(String[] args) throws ClassNotFoundException {
         
@@ -20,7 +20,7 @@ public class update {
             Statement stmt = conn.createStatement();
 
             // executeUpdate() è usato per comandi di INSERT, UPDATE, DELETE, resistiusce il numero di righe su cui è intervenuto con successo
-            int result = stmt.executeUpdate("update anagrafica_clienti set ragione_sociale='GFG' where id_anagrafica=2");
+            int result = stmt.executeUpdate("update quotidiani set ??");
 
             // se result è maggiore di 0, il record è stato aggiunto, altrimenti qualcosa è andato storto
             if (result > 0) {
