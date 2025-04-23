@@ -11,11 +11,15 @@ public class Quotidiani {
     private int cvendute;
     Scanner inputUtente = new Scanner(System.in);
 
-
-
     // Costruttore vuoto
     public Quotidiani() {}
 
+    public Quotidiani(String nome, double prezzo, int aggio){
+        this.nome = nome;
+        this.prezzo = prezzo;
+        this.aggio = aggio;
+    }
+    
     // Costruttore completo
     public Quotidiani(int id, String nome, double prezzo, int aggio, int cricevute, int cvendute) {
         this.id = id;
@@ -96,13 +100,13 @@ public class Quotidiani {
     }
 
     public void setCvendute(int cvendute) {
-        if (this.cvendute > 0) {
+        if (this.cvendute > 0 && this.cvendute < this.cricevute) {
             this.cvendute = cvendute;
         }else{
             do{    
                 System.out.println("il dato inserito non puo essere negativo.. re inserisci il valore");
                 this.cvendute = inputUtente.nextInt();
-            }while(this.cvendute <= 0);
+            }while(this.cvendute <= 0 && this.cvendute > this.cricevute);
         }
     }
 
