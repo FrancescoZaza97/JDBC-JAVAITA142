@@ -1,5 +1,7 @@
 package bean;
 
+import java.util.Scanner;
+
 public class Quotidiani {
     private int id;
     private String nome;
@@ -7,6 +9,9 @@ public class Quotidiani {
     private int aggio;
     private int cricevute;
     private int cvendute;
+    Scanner inputUtente = new Scanner(System.in);
+
+
 
     // Costruttore vuoto
     public Quotidiani() {}
@@ -43,7 +48,15 @@ public class Quotidiani {
     }
 
     public void setPrezzo(double prezzo) {
-        this.prezzo = prezzo;
+        
+        if (this.prezzo > 0) {
+            this.prezzo = prezzo;
+        }else{
+            do{    
+                System.out.println("il dato inserito non puo essere negativo.. re inserisci il valore");
+                this.prezzo = inputUtente.nextDouble();
+            }while(this.prezzo <= 0);
+        }
     }
 
     public int getAggio() {
@@ -51,7 +64,15 @@ public class Quotidiani {
     }
 
     public void setAggio(int aggio) {
-        this.aggio = aggio;
+
+        if (this.aggio > 0) {
+            this.aggio = aggio;
+        }else{
+            do{    
+                System.out.println("il dato inserito non puo essere negativo.. re inserisci il valore");
+                this.aggio = inputUtente.nextInt();
+            }while(this.aggio <= 0);
+        }
     }
 
     public int getCricevute() {
@@ -59,7 +80,15 @@ public class Quotidiani {
     }
 
     public void setCricevute(int cricevute) {
-        this.cricevute = cricevute;
+
+        if (this.cricevute > 0) {
+            this.cricevute = cricevute;
+        }else{
+            do{    
+                System.out.println("il dato inserito non puo essere negativo.. re inserisci il valore");
+                this.cricevute = inputUtente.nextInt();
+            }while(this.cricevute <= 0);
+        }
     }
 
     public int getCvendute() {
@@ -67,7 +96,14 @@ public class Quotidiani {
     }
 
     public void setCvendute(int cvendute) {
-        this.cvendute = cvendute;
+        if (this.cvendute > 0) {
+            this.cvendute = cvendute;
+        }else{
+            do{    
+                System.out.println("il dato inserito non puo essere negativo.. re inserisci il valore");
+                this.cvendute = inputUtente.nextInt();
+            }while(this.cvendute <= 0);
+        }
     }
 
     @Override
